@@ -23,14 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jp^q+nkurdtm1wbeq6cpmx87szt#fpmlm4_jo8#3ox%bbpk&1^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# Allow only the specific host for production
+ALLOWED_HOSTS = [
+    "crowd-funding-backend-django.vercel.app",
+]
 
 # CORS settings
 # Allow your frontend origin (e.g., http://localhost:5173) to access the API
+# and also the deployed frontend on Vercel
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://crowd-funding-frontend-django.vercel.app"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
